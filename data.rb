@@ -1,18 +1,31 @@
+require 'attr_extras'
+require 'active_support/all'
+require 'active_model'
+require 'active_model_serializers/model'
 require 'securerandom'
 require 'ffaker'
 
-Author = Struct.new(:id, :first_name, :last_name, :books, :book_ids)
-Genre = Struct.new(:id, :title, :description, :books, :book_ids)
-Book = Struct.new(
-  :id,
-  :title,
-  :description,
-  :published_at,
-  :authors,
-  :author_ids,
-  :genre,
-  :genre_id
-) do
+# huh...
+class BaseModel < ActiveModelSerializers::Model
+end
+
+class Author < BaseModel
+  vattr_initialize :id, :first_name, :last_name, :books, :book_ids
+end
+class Genre < BaseModel
+  vattr_initialize :id, :title, :description, :books, :book_ids
+end
+class Book < BaseModel
+  vattr_initialize(
+    :id,
+    :title,
+    :description,
+    :published_at,
+    :authors,
+    :author_ids,
+    :genre,
+    :genre_id
+  )
 
   def sync
     author_ids = authors.map do |a|
@@ -56,6 +69,7 @@ DATA = (ENV['DATA_SIZE'] || 1000).times.map do
     FFaker::Time.datetime,
     authors.sample(rand(1..5)),
     [],
-    genres.sample()
+    genres.sample(),
+    nil
   ).sync
 end

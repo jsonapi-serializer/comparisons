@@ -8,3 +8,6 @@ gem 'jsonapi-serializers'
 
 gem 'benchmark_driver'
 gem 'ffaker'
+
+# Sugar
+gem 'attr_extras'

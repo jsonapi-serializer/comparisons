@@ -3,8 +3,6 @@ require 'fast_jsonapi'
 class AuthorSerializer
   include FastJsonapi::ObjectSerializer
 
-  set_type :author
-  set_id :id
   attributes :first_name, :last_name
   has_many :books
 end
@@ -12,8 +10,6 @@ end
 class GenreSerializer
   include FastJsonapi::ObjectSerializer
 
-  set_type :genre
-  set_id :id
   attributes :title, :description
   has_many :books
 end
@@ -21,8 +17,6 @@ end
 class BookSerializer
   include FastJsonapi::ObjectSerializer
 
-  set_type :book
-  set_id :id
   attributes :title, :description, :published_at
   has_many :authors
   belongs_to :genre
