@@ -1,0 +1,8 @@
+prelude: 'require "/app/data.rb"'
+benchmark:
+  fast_jsonapi: 'require "/app/fast_jsonapi.rb"; run! '
+  fast_jsonapi(many): 'require "/app/fast_jsonapi.rb"; run_many! '
+  fast_jsonapi(include): 'require "/app/fast_jsonapi.rb"; run_include_all! '
+  active_model_serializers: 'require "/app/ams.rb"; run! '
+  jsonapi-serializable: 'require "/app/jsonapi-serializable.rb"; run! '
+  jsonapi-serializers: 'require "/app/jsonapi-serializers.rb"; run! '
