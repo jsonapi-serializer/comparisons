@@ -37,3 +37,17 @@ def run_include_all!
     include: ['authors', 'genre']
   )
 end
+
+def run_include_deep!
+  JSONAPI::Serializer.serialize(
+    DATA.sample,
+    include: [
+      'authors',
+      'authors.books',
+      'authors.books.genre',
+      'authors.books.genre.books',
+      'authors.books.genre.books.authors',
+      'authors.books.genre.books.genre'
+    ]
+  )
+end
