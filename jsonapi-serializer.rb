@@ -1,21 +1,21 @@
-require 'fast_jsonapi'
+require 'jsonapi/serializer'
 
 class AuthorSerializer
-  include FastJsonapi::ObjectSerializer
+  include JSONAPI::Serializer
 
   attributes :first_name, :last_name
   has_many :books
 end
 
 class GenreSerializer
-  include FastJsonapi::ObjectSerializer
+  include JSONAPI::Serializer
 
   attributes :title, :description
   has_many :books
 end
 
 class BookSerializer
-  include FastJsonapi::ObjectSerializer
+  include JSONAPI::Serializer
 
   attributes :title, :description, :published_at
   has_many :authors
