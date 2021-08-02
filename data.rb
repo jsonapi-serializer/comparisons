@@ -1,12 +1,9 @@
 require 'attr_extras'
 require 'active_support/all'
-require 'active_model'
-require 'active_model_serializers/model'
 require 'securerandom'
 require 'ffaker'
 
-# huh...
-class BaseModel < ActiveModelSerializers::Model
+class BaseModel
 end
 
 class Author < BaseModel

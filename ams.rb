@@ -1,5 +1,9 @@
 require 'active_model_serializers'
 
+BaseModel.class_eval do
+  alias :read_attribute_for_serialization :send
+end
+
 ActiveModelSerializers.config.adapter = :json_api
 
 class AuthorSerializer < ActiveModel::Serializer
