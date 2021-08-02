@@ -38,7 +38,7 @@ class Book < BaseModel
   end
 end
 
-authors = (ENV['DATA_SIZE'] || 1000).times.map do
+authors = (ENV['DATA_SIZE'] || 1000).to_i.times.map do
   Author.new(
     SecureRandom.uuid,
     FFaker::Name.first_name,
@@ -58,7 +58,7 @@ genres = 10.times.map do
   )
 end
 
-DATA = (ENV['DATA_SIZE'] || 1000).times.map do
+DATA = (ENV['DATA_SIZE'] || 1000).to_i.times.map do
   Book.new(
     SecureRandom.uuid,
     FFaker::Book.title,
