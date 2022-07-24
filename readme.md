@@ -11,5 +11,5 @@ The frameworks selection requirements:
 To start the benchmarks, run:
 
 ```
-$ docker run --rm -v `pwd`:/app -w /app -it -e RUBYOPT=-W:no-deprecated ruby:2.7-alpine sh -c 'apk add git build-base && bundle && benchmark-driver ./all.yml --bundler'
+docker run --rm -v `pwd`:/app -w /app -it -e RUBYOPT=-W:no-deprecated ruby:2.7-alpine sh -c 'apk add git build-base && bundle && benchmark-driver ./all.yml --bundler'
 ```
