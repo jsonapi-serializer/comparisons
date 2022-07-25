@@ -16,3 +16,7 @@ benchmark:
  jsonapi-serializers(many): 'require File.expand_path("jsonapi-serializers.rb", ENV["PWD"]); run_many!'
  jsonapi-serializers(include): 'require File.expand_path("jsonapi-serializers.rb", ENV["PWD"]); run_include_all!'
  jsonapi-serializers(deep): 'require File.expand_path("jsonapi-serializers.rb", ENV["PWD"]); run_include_deep!'
+ grape-entity: 'require File.expand_path("grape-entity.rb", ENV["PWD"]); run!'
+ grape-entity(many): 'require File.expand_path("grape-entity.rb", ENV["PWD"]); run_many!'
+ grape-entity(include): 'require File.expand_path("grape-entity.rb", ENV["PWD"]); run_include_all!'
+ grape-entity(deep): 'require File.expand_path("grape-entity.rb", ENV["PWD"]); run_include_deep!'
